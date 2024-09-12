@@ -6,7 +6,11 @@ public class GameManager : MonoBehaviour
 {
     int indexI, indexJ; //Variáveis de localização para os blocos da matriz.
 
-    [SerializeField] Sprite x, circulo;
+    [SerializeField] Sprite spriteX, spriteCirculo;
+
+    [SerializeField] Sprite spriteVazia;
+
+    
 
     //Método para ter o endereço das áreas.
     public void DefinirEndereco(int i, int j)
