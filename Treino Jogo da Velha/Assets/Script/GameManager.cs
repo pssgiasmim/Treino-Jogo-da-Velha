@@ -4,22 +4,40 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
+    //Método Awake do instance
+    #region Singleton 
+    public static GameManager instance;
+    private void Awake()
+    {
+        instance = this;
+    }
+    #endregion
+
+    Area[,] areas = new Area[3,3]; //variável da MATRIZ, esse Area(na cor azul), se refere ao script, e areas(na cor branca) é a variável que é a matriz
+
     int indexI, indexJ; //Variáveis de localização para os blocos da matriz.
 
     [SerializeField] Sprite spriteX, spriteCirculo;
 
     [SerializeField] Sprite spriteVazia;
 
-    public bool trocarSprite;
+    public bool trocarSprite; //Variável responsável por trocar as sprites entre X e Círculo.
 
-    
+    int diametroCampo = 3;
 
-    //Método para ter o endereço das áreas.
-    public void DefinirEndereco(int i, int j)
+    //Método para gerar o campo do jogo da velha, com base em uma MATRIZ.
+    public void GerarJogoDaVelha()
     {
-        indexI = i;
-        indexJ = j;
+        //Aqui, a MATRIZ está sendo criada
+        for (int i = 0; i < diametroCampo; i++) //Percorre as linhas [ i ] da matriz
+        {
+            for (int j = 0; j < diametroCampo; j++)//Percorre as colunas [ j ] da matriz
+            {
+                areas[i, j] = area; //o elemento [i, j] está recebendo o valor de area
+            }
+        }
     }
+
 
     //Método para ver se o botão da área foi clicado.
     public void BotaoClicado()
@@ -45,5 +63,8 @@ public class GameManager : MonoBehaviour
     {
 
     }
+
+
+   
 
 }

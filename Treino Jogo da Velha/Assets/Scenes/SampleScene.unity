@@ -155,6 +155,7 @@ MonoBehaviour:
   spriteX: {fileID: 0}
   spriteCirculo: {fileID: 0}
   spriteVazia: {fileID: 0}
+  trocarSprite: 0
 --- !u!4 &320789799
 Transform:
   m_ObjectHideFlags: 0
